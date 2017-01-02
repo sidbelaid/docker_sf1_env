@@ -7,19 +7,13 @@ RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noar
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 # update & prerequis
-RUN yum -y update
-	&& yum install -y wget
-	&& yum install -y multitail
+RUN yum -y update \
+	&& yum install -y httpd \
+	&& yum --enablerepo=epel,remi,rpmforge install -y php php-fpm php-common php-pdo php-mysql php-gd php-mbstring php-xml php-pecl-zendopcache \
+	&& yum install -y ImageMagick
+	&& yum install -y wget \
+	&& yum install -y multitail \
 	&& yum install -y telnet
-
-# install apache
-RUN yum install -y httpd
-
-# install php
-RUN yum --enablerepo=epel,remi,rpmforge install -y php php-fpm php-common php-pdo php-mysql php-gd php-mbstring php-xml php-pecl-zendopcache
-
-# imagemagick
-RUN yum install -y ImageMagick
 
 # demarrer services
 CMD service httpd start

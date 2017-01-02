@@ -1,4 +1,5 @@
 SYMFONY 1.4 ENV without mysql
+
 use docker-compose to link a mysql image
 
 centos6.6
