@@ -7,8 +7,7 @@ RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noar
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 # update & prerequis
-RUN yum -y update --nogpgcheck
-RUN yum clean all
+RUN yum -y update --nogpgcheck; yum clean all
 
 # Apache PHP ImageMagick
 RUN yum install -y httpd
