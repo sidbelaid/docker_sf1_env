@@ -1,0 +1,23 @@
+version: '2'
+services:
+    web:
+        image: meupatrocinio/apache2.4-php5.4-ssl-nr-rg
+#        image: php:5.4-apache
+        ports:
+            - "80:80"
+            - "32000:32000"
+        volumes:
+            - /home/projets/RD/docker/sf1/compose/config/sites-enabled/001_symfony.conf:/etc/httpd/sites-enabled/001_symfony.conf
+            - /home/projets/Symfony/:/var/www/symfony14/
+        links:
+            - db
+        environment:
+            - ALLOW_OVERRIDE=All
+    db:
+        image: mysql:5.5.54
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - /home/projets/docker/sf1/mysql:/var/lib/mysql
