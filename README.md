@@ -12,13 +12,14 @@
 
 ### 1- run
 ```
+$ cd {YourSf1ProjectsDirectory}
 $ git clone https://github.com/sidbelaid/docker_sf1_env.git docker_sf1_env
 ```
 ### 2- configure host in config/vhost
-replace {site} in the host by your app folder, you can create as many hosts you want
-if you wana use dns add your ServerName in the windows hosts file
-ex :
-site.dev	192.168.99.100
+* replace {site} in the config/vhost/001_site.conf by your app folder, you can create as many hosts you want, just change the port
+* if you wana use dns add your ServerName in the windows hosts file
+* ex :
+* site.dev	192.168.99.100
 
 ### 3- run
 ```
