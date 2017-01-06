@@ -1,13 +1,14 @@
 version: '2'
 services:
     web:
-        image: meupatrocinio/apache2.4-php5.4-ssl-nr-rg
+#        image: meupatrocinio/apache2.4-php5.4-ssl-nr-rg
 #        image: php:5.4-apache
+        build: ./web
         ports:
             - "80:80"
             - "32000:32000"
         volumes:
-            - /home/projets/RD/docker/sf1/compose/config/sites-enabled/001_symfony.conf:/etc/httpd/sites-enabled/001_symfony.conf
+            - /home/projets/Symfony/docker_sf1_env/config/vhost:/etc/httpd/sites-enabled
             - /home/projets/Symfony/:/var/www/symfony14/
         links:
             - db
