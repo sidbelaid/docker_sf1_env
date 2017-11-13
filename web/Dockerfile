@@ -3,7 +3,7 @@ FROM meupatrocinio/apache2.4-php5.4-ssl-nr-rg
 MAINTAINER Orca
 
 # repos
-RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 # Zend OPCACHE & ImageMagick

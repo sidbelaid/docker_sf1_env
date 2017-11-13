@@ -8,8 +8,8 @@ services:
             - "80:80"
             - "32000:32000"
         volumes:
-            - /home/projets/Symfony/docker_sf1_env/config/vhost:/etc/httpd/sites-enabled
-            - /home/projets/Symfony/:/var/www/symfony14/
+            - /developpement/docker/docker_sf1_env/config/vhost:/etc/httpd/sites-enabled
+            - /developpement/sfProjects/sf1.4/:/var/www/html/
         links:
             - db
         environment:
@@ -21,4 +21,4 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
         volumes:
-            - /home/projets/docker/sf1/mysql:/var/lib/mysql
+            - /developpement/docker/mysql55:/var/lib/mysql
