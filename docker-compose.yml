@@ -9,6 +9,7 @@ services:
             - "32000-32100:32000-32100"
         volumes:
             - /developpement/docker/docker_sf1_env/config/php.ini:/usr/local/etc/php/php.ini
+            - /developpement/docker/docker_sf1_env/config/apache-custom.conf:/etc/apache2/conf-enabled/custom.conf
             - /developpement/docker/docker_sf1_env/config/vhost:/etc/apache2/sites-enabled/
             - /developpement/sfProjects/sf1.4/:/var/www/html/
         links:
