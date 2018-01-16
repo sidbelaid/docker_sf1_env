@@ -24,3 +24,4 @@ services:
             MYSQL_ROOT_PASSWORD: root
         volumes:
             - /developpement/docker/mysql55:/var/lib/mysql
+            - /developpement/docker_sf1_env/config/my.cnf:/etc/mysql/conf.d/my.cnf
