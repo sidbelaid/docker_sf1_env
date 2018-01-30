@@ -1,8 +1,6 @@
-version: '2'
+version: '3.2'
 services:
     web:
-#        image: meupatrocinio/apache2.4-php5.4-ssl-nr-rg
-#        image: php:5.4-apache
         build: ./web
         ports:
             - "80:80"
@@ -10,7 +8,7 @@ services:
         volumes:
             - /developpement/docker/docker_sf1_env/config/php.ini:/usr/local/etc/php/php.ini
             - /developpement/docker/docker_sf1_env/config/apache-custom.conf:/etc/apache2/conf-enabled/custom.conf
-            - /developpement/docker/docker_sf1_env/config/vhost:/etc/apache2/sites-enabled/
+            - /developpement/docker/docker_sf1_env/config/vhost/:/etc/apache2/sites-enabled/
             - /developpement/sfProjects/sf1.4/:/var/www/html/
         links:
             - db
@@ -23,5 +21,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
         volumes:
-            - /developpement/docker/mysql55:/var/lib/mysql
-            - /developpement/docker_sf1_env/config/my.cnf:/etc/mysql/conf.d/my.cnf
+            - mysql-data:/var/lib/mysql
+              
+volumes:
+    mysql-data:
